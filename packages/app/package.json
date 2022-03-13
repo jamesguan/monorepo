@@ -1,0 +1,65 @@
+{
+  "name": "@neotag/app",
+  "version": "0.0.1",
+  "description": "Main App",
+  "author": "James Guan <jamesguan94@gmail.com>",
+  "homepage": "https://github.com/NeoTagInc/monorepo/tree/main/packages/app#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoTagInc/monorepo.git"
+  },
+  "scripts": {
+    "di": "npm ci && npm run lerna:clean && npm run lerna:bootstrap",
+    "build": "npm run clean && webpack --config webpack.prod.js",
+    "clean": "rm -rf build/*",
+    "lerna:bootstrap": "npx lerna bootstrap --ci --ignore-scripts",
+    "lerna:clean": "npx lerna clean --yes",
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/NeoTagInc/monorepo/issues"
+  },
+  "dependencies": {
+    "@neotag/common": "file:../common",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.2.2",
+    "react-router-dom": "^6.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
