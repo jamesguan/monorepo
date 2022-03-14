@@ -21,12 +21,12 @@
     "url": "git+https://github.com/NeoTagInc/monorepo.git"
   },
   "scripts": {
-    "di": "npm ci && npm run lerna:clean && npm run lerna:bootstrap",
-    "build": "npm run clean && webpack --config webpack.prod.js",
-    "clean": "rm -rf build/*",
-    "lerna:bootstrap": "npx lerna bootstrap --ci --ignore-scripts",
-    "lerna:clean": "npx lerna clean --yes",
     "dev": "webpack serve --open --config webpack.dev.js",
+    "di": "npm run lerna:clean && npm run lerna:bootstrap",
+    "build": "npm run clean && npm run di && webpack --config webpack.prod.js",
+    "clean": "rm -rf build/*",
+    "lerna:bootstrap": "npx lerna bootstrap --ci --hoist --strict --ignore-scripts",
+    "lerna:clean": "npx lerna clean --yes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bugs": {
