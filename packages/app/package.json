@@ -1,9 +1,9 @@
 {
-  "name": "@neotag/app",
+  "name": "@monorepo/app",
   "version": "0.0.1",
   "description": "Main App",
   "author": "James Guan <jamesguan94@gmail.com>",
-  "homepage": "https://github.com/NeoTagInc/monorepo/tree/main/packages/app#readme",
+  "homepage": "https://github.com/jamesguan/monorepo/tree/main/packages/app#readme",
   "license": "ISC",
   "main": "src/index.js",
   "directories": {
@@ -18,34 +18,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeoTagInc/monorepo.git"
+    "url": "git+https://github.com/jamesguan/monorepo.git"
   },
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "di": "npm run lerna:clean && npm run lerna:bootstrap",
     "build": "npm run clean && npm run di && webpack --config webpack.prod.js",
     "clean": "rm -rf build/*",
-    "lerna:bootstrap": "npx lerna bootstrap --ci --hoist --strict --ignore-scripts",
+    "lerna:bootstrap": "npx lerna bootstrap --ci --hoist --strict --ignore-scripts --ignore @monorepo/nativeapp",
     "lerna:clean": "npx lerna clean --yes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/NeoTagInc/monorepo/issues"
-  },
-  "dependencies": {
-    "@neotag/common": "file:../common",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^6.2.2",
-    "react-router-dom": "^6.2.2"
+    "url": "https://github.com/jamesguan/monorepo/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
+    "@monorepo/common": "file:../common",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "babel-loader": "^8.2.3",
+    "@visx/visx": "^2.9.0",
+    "babel-loader": "^8.2.4",
+    "bootstrap": "^5.1.3",
     "copy-webpack-plugin": "^10.2.0",
+    "core-js": "^3.21.1",
     "css-loader": "^6.5.1",
+    "d3": "^7.3.0",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-plugin-import": "^2.25.3",
@@ -55,8 +54,14 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "react": "17.0.2",
+    "react-bootstrap": "^2.2.1",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.2.2",
+    "react-router-dom": "^6.2.2",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
+    "styled-components": "^5.3.3",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.2",

@@ -2,6 +2,6 @@
 
 const common = require('..');
 
-describe('@neotag/common', () => {
+describe('@monorepo/common', () => {
     it('needs tests');
 });

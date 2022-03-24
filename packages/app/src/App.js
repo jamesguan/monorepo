@@ -1,8 +1,11 @@
-import Message from '@neotag/common/lib/components/Message'
+import Message from '@monorepo/common/lib/components/Message';
+
+import Dashboard from './components/Dashboard';
+
 const App = () => {
   return (
     <>
-      <Message />
+      <Dashboard />
       I am the app
     </>
   );

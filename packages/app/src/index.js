@@ -4,7 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./App.css";
+
 //import "antd/dist/antd.css";
 
 ReactDom.render(

@@ -1,11 +1,11 @@
-# `@neotag/common`
+# `@monorepo/common`
 
 > TODO: description
 
 ## Usage
 
 ```
-const common = require('@neotag/common');
+const common = require('@monorepo/common');
 
 // TODO: DEMONSTRATE API
 ```

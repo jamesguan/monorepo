@@ -1,11 +1,11 @@
-# `@neotag/app`
+# `@monorepo/app`
 
 > TODO: description
 
 ## Usage
 
 ```
-const app = require('@neotag/app');
+const app = require('@monorepo/app');
 
 // TODO: DEMONSTRATE API
 ```

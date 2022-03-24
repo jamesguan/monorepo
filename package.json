@@ -1,56 +1,32 @@
 {
   "name": "monorepo",
   "version": "1.0.0",
-  "description": "Monorepo for NeoTag using react",
+  "description": "Open source monorepo by James Guan",
   "main": "index.js",
   "scripts": {
     "dev": "cd packages/app && webpack serve --open --config webpack.dev.js",
     "di": "npm run lerna:clean && npm run lerna:bootstrap",
     "build": "npm run clean && npm run di && webpack --config webpack.prod.js",
     "clean": "rm -rf build/*",
+    "build:webdev": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run di --stream --",
+    "webdev": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run dev --stream --",
     "lerna:bootstrap": "npx lerna bootstrap --ci --hoist --strict --ignore-scripts",
     "lerna:clean": "npx lerna clean --yes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeoTagInc/monorepo.git"
+    "url": "git+https://github.com/jamesguan/monorepo.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "James Guan",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NeoTagInc/monorepo/issues"
+    "url": "https://github.com/jamesguan/monorepo/issues"
   },
-  "homepage": "https://github.com/NeoTagInc/monorepo#readme",
-  "dependencies": {
-    "@neotag/app": "file:./packages/app",
-    "@neotag/common": "file:./packages/common",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^6.2.2",
-    "react-router-dom": "^6.2.2"
-  },
+  "homepage": "https://github.com/jamesguan/monorepo#readme",
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
-    "@babel/preset-react": "^7.16.7",
-    "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^10.2.0",
-    "css-loader": "^6.5.1",
-    "eslint": "^8.5.0",
-    "eslint-config-airbnb": "^19.0.2",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.4.5",
-    "sass-loader": "^12.4.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.2",
-    "webpack-merge": "^5.8.0"
+    "@monorepo/common": "file:./packages/common",
+    "@monorepo/app": "file:./packages/app",
+    "@monorepo/nativeapp": "file:./packages/nativeapp"
   }
 }

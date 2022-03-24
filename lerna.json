@@ -1,4 +1,8 @@
 {
+  "nohoist": [
+    "**/@babel",
+    "**/eslint"
+  ],
   "packages": [
     "packages/*"
   ],

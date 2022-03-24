@@ -1,9 +1,9 @@
 {
-  "name": "@neotag/common",
+  "name": "@monorepo/common",
   "version": "0.0.0",
   "description": "ls",
   "author": "James Guan <jamesguan94@gmail.com>",
-  "homepage": "https://github.com/NeoTagInc/monorepo/tree/main/packages/common#readme",
+  "homepage": "https://github.com/jamesguan/monorepo/tree/main/packages/common#readme",
   "license": "ISC",
   "main": "lib/common.js",
   "directories": {
@@ -18,15 +18,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NeoTagInc/monorepo.git"
+    "url": "git+https://github.com/jamesguan/monorepo.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/NeoTagInc/monorepo/issues"
+    "url": "https://github.com/jamesguan/monorepo/issues"
   },
   "dependencies": {
-    "react": "^17.0.2"
+    "@visx/visx": "^2.9.0",
+    "react": "17.0.2"
   }
 }

@@ -2,6 +2,6 @@
 
 const app = require('..');
 
-describe('@neotag/app', () => {
+describe('@monorepo/app', () => {
     it('needs tests');
 });

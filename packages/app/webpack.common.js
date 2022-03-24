@@ -1,3 +1,5 @@
+// https://dev.to/riyanegi/setting-up-webpack-5-with-react-and-babel-from-scratch-2021-271l
+// https://github.com/zloirock/core-js
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -19,17 +21,32 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /nodeModules/,
+        test: /\.m?(j|t)sx?$/,
+        exclude: [/nodeModules/, /core-js/
+      ],
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env",
+              ["@babel/preset-env", {
+                "useBuiltIns": "usage",
+                "corejs": 3,
+                "targets": "ie >= 8"
+              }],
               ["@babel/preset-react", {
                 "runtime": "automatic"
-              }]
-            ]
+              }],
+            ],
+            plugins: [
+              [
+                "@babel/plugin-transform-runtime",
+                {
+                  corejs: 3,
+                  regenerator: true,
+                }
+              ]
+            ],
+            sourceType: "unambiguous",
           }
         },
       },
@@ -49,7 +66,7 @@ module.exports = {
     modules: [
       'node_modules',
     ],
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx','.json'],
     symlinks: true,
   },
 };
