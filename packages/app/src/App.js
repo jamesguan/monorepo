@@ -1,13 +1,10 @@
 import Message from '@monorepo/common/lib/components/Message';
 
-import Dashboard from './components/Dashboard';
+import Router from './Router';
 
 const App = () => {
   return (
-    <>
-      <Dashboard />
-      I am the app
-    </>
+    <Router />
   );
 }
 

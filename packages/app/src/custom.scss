@@ -1,0 +1,25 @@
+// https://getbootstrap.com/docs/4.0/getting-started/theming/
+$neotag-green:  #00dd7e;
+
+$primary:       $neotag-green;
+$secondary:     #191c20;
+$success:       #198754;
+$info:          #0dcaf0;
+$warning:       #ffc107;
+$danger:        #dc3545;
+$light:         #f8f9fa;
+$dark:          #101010;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@import "~bootstrap/scss/bootstrap";
+

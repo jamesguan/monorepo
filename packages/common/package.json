@@ -27,7 +27,14 @@
     "url": "https://github.com/jamesguan/monorepo/issues"
   },
   "dependencies": {
+    "@rematch/core": "^2.2.0",
     "@visx/visx": "^2.9.0",
     "react": "17.0.2"
+  },
+  "devDependencies": {
+    "final-form": "^4.20.6",
+    "react-final-form": "^6.5.8",
+    "redux-thunk": "^2.4.1",
+    "reselect": "^4.1.5"
   }
 }

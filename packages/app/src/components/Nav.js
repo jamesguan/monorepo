@@ -1,34 +1,56 @@
-import BootstrapNav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+import Navigation from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
 
-const data1 = [
-  { x: '2020-01-01', y: 50 },
-  { x: '2020-01-02', y: 10 },
-  { x: '2020-01-03', y: 20 },
-];
+import NeoTagLogoImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_mark.svg';
+import NeoTagLogoNameImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_text.svg'
 
-const data2 = [
-  { x: '2020-01-01', y: 30 },
-  { x: '2020-01-02', y: 40 },
-  { x: '2020-01-03', y: 80 },
-];
-
-const accessors = {
-  xAccessor: d => d.x,
-  yAccessor: d => d.y,
-};
-
-const Container = styled.div`
-
+const NeoTagLogo = styled.img`
+  height: 30px;
+  margin: 12px;
 `;
 
-const Nav = ({ ...props }) => {
+const Nav = ({ signedIn, ...props }) => {
   return (
-    <BootstrapNav fill variant="tabs" defaultActiveKey="/" {...props} >
-      <BootstrapNav.Item>
-        <BootstrapNav.Link href="/">Dashboard</BootstrapNav.Link>
-      </BootstrapNav.Item>
-    </BootstrapNav>
+    <Navbar
+      fill
+      bg="dark"
+      collapseOnSelect
+      expand="lg"
+      defaultActiveKey="/"
+      variant="dark"
+      {...props}
+    >
+      <Container>
+        <Navbar.Brand href="#home">
+          <NeoTagLogo src={NeoTagLogoImage} />
+          <NeoTagLogo src={NeoTagLogoNameImage} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse
+          className="justify-content-end"
+          id="responsive-navbar-nav"
+        >
+          {
+            signedIn && (
+                <Navbar.Text className="d-sm-block">
+                  Signed in as: <a href="#login">James Guan</a>
+                </Navbar.Text>
+          )}
+          {
+            !signedIn && (
+              <>
+                <Navigation.Link href="/login">Login</Navigation.Link>
+                <Navigation.Link href="/signup">Sign Up</Navigation.Link>
+              </>
+            )
+          }
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 };
 
