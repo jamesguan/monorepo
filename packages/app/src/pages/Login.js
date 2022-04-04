@@ -95,12 +95,12 @@ const Login = (props) => {
   return (
     <PageContainer className="bg-secondary">
       <Container>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-center">
           <NeoTagLogo src={NeoTagLogoImage} />
           <NeoTagLogo src={NeoTagNameImage} />
         </ Row>
-        <Row className="justify-content-md-center">
-          <Col className="justify-content-md-center" md={6} lg={4}>
+        <Row className="justify-content-center">
+          <Col className="justify-content-center" md={6} lg={4}>
             <LoginContainer className="bg-dark">
               <Card.Body>
                 <FinalForm

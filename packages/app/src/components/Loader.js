@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const CircleContainer = styled.div`
   align-items: center;
   height: 90vh;
-  display: fixed;
   justify-content: center;
 `;
 
