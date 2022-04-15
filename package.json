@@ -4,14 +4,17 @@
   "description": "Open source monorepo by James Guan",
   "main": "index.js",
   "scripts": {
-    "dev": "cd packages/app && webpack serve --open --config webpack.dev.js",
-    "di": "npm run lerna:clean && npm run lerna:bootstrap",
+    "android": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run android --stream --",
     "build": "npm run clean && npm run di && webpack --config webpack.prod.js",
     "clean": "rm -rf build/*",
-    "di:web": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run di --stream --",
-    "dev:web": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run dev --stream --",
+    "di": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run di --stream --",
+    "dev": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run dev --stream --",
     "lerna:bootstrap": "npx lerna bootstrap --ci --hoist --strict --ignore-scripts",
     "lerna:clean": "npx lerna clean --yes",
+    "ni": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run build:ios --stream --",
+    "metro": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run start --stream --",
+    "metro:reset": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run start:reset-cache --stream --",
+    "ios": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run ios --stream --",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,12 +1,12 @@
-import { newsletterSignup } from '../../apis/newsletter';
-
 import { createSliceSelector } from '../common/selectors';
+import { login } from '../../apis/user';
 
 export const newsletterDetails = createSliceSelector('newsletter');
 
-const newsletter = {
+const user = {
   state: {
     alertType: 'error',
+    name: 'Fake',
   },
   reducers: {
     setAlertType(state, alertType) {
@@ -17,27 +17,28 @@ const newsletter = {
     },
   },
   effects: dispatch => ({
-    async handleNewsletterSubmit(payload, rootState) {
-      const { email } = payload;
+    async handleLogin(payload, rootState) {
+      const { username, password } = payload;
+      console.log('logging in');
       try {
-        await newsletterSignup(email);
+        await login({ username, password });
       } catch (error) {
         let message;
         // We want redux-form to catch the error to know the request failed.
         switch(error.response.status) {
         case 409:
           message = 'Looks like you already signed up for the newsletter.';
-          dispatch.newsletter.setAlertType('info', rootState);
+          dispatch.user.setAlertType('info', rootState);
           break;
         default:
           message = 'Unable to sign up for newsletter. Please try again later.';
-          dispatch.newsletter.setAlertType('error', rootState);
+          dispatch.user.setAlertType('error', rootState);
         }
-        throw new SubmissionError({_error: message}); 
+        //throw new SubmissionError({_error: message}); 
       }
       console.log('Request finished');
     },
   }),
 };
 
-export default newsletter;
+export default user;

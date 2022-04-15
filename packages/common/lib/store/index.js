@@ -5,13 +5,15 @@ import selectPlugin from '@rematch/select';
 
 import { init } from '@rematch/core';
 
-import * as models from './models';
+import user from './models/user';
 
 let store;
 
 export const initStore = (initialState) => {
   store = init({
-    models,
+    models: {
+      user,
+    },
     plugins: [selectPlugin()],
     redux: {
       devToolOptions: {
