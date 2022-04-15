@@ -2,13 +2,38 @@
 // https://github.com/zloirock/core-js
 
 // https://webpack.js.org/guides/asset-management/
+const webpack = require('webpack');
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const env = dotenv.config();
+
+// NAMESPCED VARIABLES: for specific variables only
+const NAMESPACES = ['NODE_', 'REACT_']; // add your approved namespaces here...
+process.env = Object.entries({ ...process.env }).reduce((acc, [key, value]) => {
+  const hasValidNamespace = NAMESPACES.some((namespace) =>
+    key.includes(namespace)
+  );
+  if (hasValidNamespace) {
+    return {
+      ...acc,
+      [key]: value,
+    };
+  } else {
+    return {
+      ...acc,
+    };
+  }
+}, {});
 
 module.exports = {
   entry: { index: path.resolve(__dirname, "./src", "index.js") },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src", "index.html"),
     }),

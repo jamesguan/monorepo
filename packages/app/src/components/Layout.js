@@ -6,9 +6,7 @@ import Nav from './Nav';
 const Layout = ({ children }) => (
   <div className="bg-secondary">
     <Nav />
-    <Container>
       {children}
-    </ Container>
     <Footer />
   </ div>
 );

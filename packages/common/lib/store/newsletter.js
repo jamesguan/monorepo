@@ -1,5 +1,3 @@
-import { SubmissionError } from 'redux-form';
-
 import { newsletterSignup } from '../../apis/newsletter';
 
 import { createSliceSelector } from '../common/selectors';

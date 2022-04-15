@@ -22,8 +22,12 @@
   },
   "scripts": {
     "android": "react-native run-android",
+    "audit": "npm audit fix",
+    "build:ios": "cd ios && pod install",
+    "build:android": "cd android && gradlew clean",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "start:reset-cache": "react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint ."
   },
