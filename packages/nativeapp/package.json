@@ -22,9 +22,10 @@
   },
   "scripts": {
     "android": "react-native run-android",
+    "android:debug": "react-native run-android -- --warning-mode=all",
     "audit": "npm audit fix",
     "build:ios": "cd ios && pod install",
-    "build:android": "cd android && gradlew clean",
+    "build:android": "cd android && ./gradlew clean && ./gradlew :app:bundleRelease --warning-mode=all",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "start:reset-cache": "react-native start --reset-cache",
@@ -38,7 +39,8 @@
   "dependencies": {
     "bootstrap": "^5.1.3",
     "react": "17.0.2",
-    "react-native": "0.67.3"
+    "react-native": "0.67.3",
+    "react-native-navigation": "^7.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
