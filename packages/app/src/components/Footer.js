@@ -22,12 +22,12 @@ const Footer = () => {
         </Col>
         <Col className="d-flex justify-content-center" xs={12} sm={4}>
           <h6 className="text-light">Contact Us</h6>
-          <Button variant="link" href="mailto:support@neotag.io">Email Support</Button>
+          <Button variant="link" href="mailto:ayebear@gmail.com">Email Support</Button>
         </Col>
       </ Row>
       <Row>
         <Col className="d-flex justify-content-center text-light">
-          Neotag {new Date().getFullYear()}
+          James {new Date().getFullYear()}
         </Col>
       </Row>
     </StyledFooter>

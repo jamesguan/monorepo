@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 import Unit from '@monorepo/common/lib/images/svg/unit_w_shadow.svg';
 
+import Discord from '@monorepo/common/lib/images/svg/discord_circular.svg';
 
 import Loader from '../components/Loader';
 import Nav from '../components/Nav';
@@ -17,20 +18,52 @@ import Layout from '../components/Layout';
 
 const data = [
   {
-    title: 'NeoTag Game',
+    title: 'Example Notification 1',
     time: '6 min(s) ago',
-    message: 'FFA Game started at College Park'
+    message: 'Hello There'
   },
   {
-    title: 'NeoTag Game',
+    title: 'Example notification 2',
     time: '1 min(s) ago',
-    message: 'James Guan has won the game with 6K/1D'
+    message: 'Hello Back'
   }
 ];
 
-const UnitImage = styled.img`
-  max-width: 1200px;
-`;
+const pageContent = [
+  {
+    name: 'Example1 ',
+    description: 'This is an example.',
+    image: Unit,
+  },
+  {
+    name: 'Example 2',
+    description: 'This is another example.',
+    image: Station,
+  },
+  {
+    name: 'Example 3',
+    description: 'Example 3.',
+    component: (
+      <ImageRoller>
+        <FadeImage class="bottom" src={UnitBlue} />
+        <FadeImage class="top" src={UnitRed} />
+        <FadeImage class="bottom" src={UnitYellow} />
+        <FadeImage class="top" src={UnitPurple} />
+      </ImageRoller>
+    )
+  },
+  {
+    name: 'Join our Discord',
+    description: (
+      <>
+        Curious for more? Check out our <a href="https://discord.gg/CaFZ44m5Bp" target="_blank">Discord</a> for more
+      </>
+    ),
+    component: (
+      <a href="https://discord.gg/CaFZ44m5Bp" target="_blank"><DiscordLogo src={Discord} /></a>
+    ),
+  },
+];
 
 const Welcome = () => {
   const [notifications, setNotifications] = useState(data);

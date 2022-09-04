@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "android": "lerna --scope='@monorepo/nativeapp' --ignore @monorepo/app run android --stream --",
-    "build": "npm run clean && npm run di && webpack --config webpack.prod.js",
+    "build": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run build --stream --",
     "clean": "rm -rf build/*",
     "di": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run di --stream --",
     "dev": "lerna --scope='@monorepo/app' --ignore @monorepo/nativeapp run dev --stream --",

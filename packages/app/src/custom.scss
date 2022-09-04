@@ -1,7 +1,8 @@
 // https://getbootstrap.com/docs/4.0/getting-started/theming/
-$neotag-green:  #00dd7e;
+// https://css-tricks.com/revisiting-prefers-reduced-motion/
+$special-green:  #00dd7e;
 
-$primary:       $neotag-green;
+$primary:       $special-green;
 $secondary:     #191c20;
 $success:       #198754;
 $info:          #0dcaf0;

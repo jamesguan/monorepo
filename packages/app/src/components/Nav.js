@@ -5,14 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
 
-import NeoTagLogoImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_mark.svg';
-import NeoTagLogoNameImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_text.svg'
-
-const NeoTagLogo = styled.img`
-  height: 30px;
-  margin: 12px;
-`;
-
 const Nav = ({ signedIn, ...props }) => {
   return (
     <Navbar
@@ -26,8 +18,7 @@ const Nav = ({ signedIn, ...props }) => {
     >
       <Container>
         <Navbar.Brand href="#home">
-          <NeoTagLogo src={NeoTagLogoImage} />
-          <NeoTagLogo src={NeoTagLogoNameImage} />
+          <div>Hi</div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse

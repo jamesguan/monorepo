@@ -20,8 +20,12 @@ Items I considered but did not go with
 Deployment strategy
 1. netlify
 2. heroku
+### How to run
 
-How to run:
-`nvm use
-`npm run di:web`
-`npm run dev:web`
+npm run di
+npm run dev
+
+### How to deploy
+npm run build:webapp
+
+Deploy from packages/app/build directory

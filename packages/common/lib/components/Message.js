@@ -1,6 +1,6 @@
 const Message = () => (
   <div>
-    Fuck No
+    Hello world
   </div>
 );
 

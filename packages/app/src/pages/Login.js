@@ -14,66 +14,6 @@ import { Form as FinalForm, Field } from 'react-final-form';
 
 import InputAdapter from '@monorepo/common/lib/components/fields/adapters/InputAdapter';
 
-import NeoTagLogoImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_mark.svg';
-import NeoTagNameImage from '@monorepo/common/lib/images/svg/neotag/neotaglogo_text.svg';
-
-const FormComponent = ({
-  formID,
-  handleSubmit,
-  hasSubmitErrors,
-  hasValidationErrors,
-  optionsFoods,
-  meta,
-  reset,
-  pristine,
-  submitError,
-  submitFailed,
-  submitting,
-  values,
-}) => {
-  return (
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId={`${formID}-phone-control`}>
-          <Form.Label className="text-light">Phone</Form.Label>
-          <Field
-            required
-            aria-describedby={`${formID}-phone-help`}
-            className="bg-secondary text-light"
-            component={InputAdapter}
-            name="phone"
-            placeholder="Enter your phone number" 
-            type="phone"
-          />
-          <Form.Text className="text-muted" id={`${formID}-phone-help`}>
-            Datarates may apply. US customers only
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId={`${formID}-password-control`}>
-          <Form.Label className="text-light">Password</Form.Label>
-          <Field
-            required
-            aria-describedby={`${formID}-password-help`}
-            className="bg-secondary text-light"
-            component={InputAdapter}
-            name="password"
-            placeholder="Enter your password" 
-            type="password"
-          />
-          <Button className="text-muted" variant="link">Forgot password</Button>
-        </Form.Group>
-        <div className="d-grid gap-2">
-          <Button size="lg" type="submit">
-            Login
-          </Button>
-        </ div>
-      </Form>
-  );
-};
-
-const handleSubmit = (values) => {
-  console.log(values);
-};
-
 const PageContainer = styled.div`
   align-items: center;
   display: absolute;
@@ -86,18 +26,28 @@ const LoginContainer = styled(Card)`
   width: 100%;
 `;
 
+<<<<<<< Updated upstream
 const NeoTagLogo = styled.img`
   height: 30px;
   margin: 8px 12px;
 `;
 
 const Login = (props) => {
+=======
+const formId = 'login';
+
+const Login = ({
+  login,
+}) => {
+  const handleSubmit = (values) => {
+    login({ username: values.phone, password: values.password });
+  };
+>>>>>>> Stashed changes
   return (
     <PageContainer className="bg-secondary">
       <Container>
         <Row className="justify-content-center">
-          <NeoTagLogo src={NeoTagLogoImage} />
-          <NeoTagLogo src={NeoTagNameImage} />
+          <div>Hello</div> 
         </ Row>
         <Row className="justify-content-center">
           <Col className="justify-content-center" md={6} lg={4}>
