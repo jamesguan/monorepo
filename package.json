@@ -28,8 +28,11 @@
   },
   "homepage": "https://github.com/jamesguan/monorepo#readme",
   "devDependencies": {
-    "@monorepo/common": "file:./packages/common",
     "@monorepo/app": "file:./packages/app",
+    "@monorepo/common": "file:./packages/common",
     "@monorepo/nativeapp": "file:./packages/nativeapp"
+  },
+  "dependencies": {
+    "lerna": "^3.16.4"
   }
 }
