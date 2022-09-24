@@ -7,9 +7,7 @@ import Toast from 'react-bootstrap/Toast';
 
 import styled from 'styled-components';
 
-import Unit from '@monorepo/common/lib/images/svg/unit_w_shadow.svg';
-
-import Discord from '@monorepo/common/lib/images/svg/discord_circular.svg';
+//import Discord from '@monorepo/common/lib/images/svg/discord_circular.svg';
 
 import Loader from '../components/Loader';
 import Nav from '../components/Nav';
@@ -33,23 +31,18 @@ const pageContent = [
   {
     name: 'Example1 ',
     description: 'This is an example.',
-    image: Unit,
+    image: '',
   },
   {
     name: 'Example 2',
     description: 'This is another example.',
-    image: Station,
+    image: '',
   },
   {
     name: 'Example 3',
     description: 'Example 3.',
     component: (
-      <ImageRoller>
-        <FadeImage class="bottom" src={UnitBlue} />
-        <FadeImage class="top" src={UnitRed} />
-        <FadeImage class="bottom" src={UnitYellow} />
-        <FadeImage class="top" src={UnitPurple} />
-      </ImageRoller>
+      <></>
     )
   },
   {
@@ -60,7 +53,7 @@ const pageContent = [
       </>
     ),
     component: (
-      <a href="https://discord.gg/CaFZ44m5Bp" target="_blank"><DiscordLogo src={Discord} /></a>
+      <a href="https://discord.gg/CaFZ44m5Bp" target="_blank">Discord</a>
     ),
   },
 ];
@@ -97,10 +90,10 @@ const Welcome = () => {
         </Row>
         <Row className="align-items-center">
           <Col className="d-flex justify-content-center" md={6}>
-            <h4 className="text-light">NeoTag brings you the most advanced lasertag system ever created. Scroll down to learn more.</ h4>
+            <h4 className="text-light">Scroll down to learn more.</ h4>
           </Col>
           <Col className="d-flex justify-content-center" md={6}>
-            <UnitImage src={Unit} />
+            Image
           </Col>
         </Row>
         <Row>

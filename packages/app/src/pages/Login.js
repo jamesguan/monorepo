@@ -26,14 +26,6 @@ const LoginContainer = styled(Card)`
   width: 100%;
 `;
 
-<<<<<<< Updated upstream
-const NeoTagLogo = styled.img`
-  height: 30px;
-  margin: 8px 12px;
-`;
-
-const Login = (props) => {
-=======
 const formId = 'login';
 
 const Login = ({
@@ -42,7 +34,7 @@ const Login = ({
   const handleSubmit = (values) => {
     login({ username: values.phone, password: values.password });
   };
->>>>>>> Stashed changes
+
   return (
     <PageContainer className="bg-secondary">
       <Container>
